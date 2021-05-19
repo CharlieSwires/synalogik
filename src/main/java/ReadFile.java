@@ -52,7 +52,7 @@ public class ReadFile {
             this.listOfWords = listOfWords;
         }
     }
-    
+
     class Index {
         public int index;
     }
@@ -81,7 +81,7 @@ public class ReadFile {
             }
         }
         sb.append("Word count="+wordCount+ls);
-        
+
         Double average = sum / (1.0*wordCount);
         sb.append("Average word length="+average+ls);
         int max = 0;
@@ -113,15 +113,20 @@ public class ReadFile {
 
     private static String readWord(String content, Index index) {
         StringBuilder returnString = new StringBuilder();
-        for(int i = index.index; i < content.length();) {
-            if (content.charAt(i) == ' ' || (i >= content.length()-1)) {
-                index.index = i+1;
-                return returnString.toString();
+        if (index.index < content.length()) {
+
+            for(int i = index.index; i < content.length();) {
+                if (content.charAt(i) == ' ') {
+                    index.index = i+1;
+                    return returnString.toString();
+                }
+                returnString.append(content.charAt(i++));
             }
-            returnString.append(content.charAt(i++));
+            index.index = content.length();
+            return returnString.toString();
+        } else {
+            return null;
         }
-        index.index = content.length();
-        return null;
     }
 
 }

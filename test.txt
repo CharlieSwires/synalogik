@@ -1,1 +1,2 @@
-This is a "test" string (which is a bit com-\nplex).
+This is a "test" string (which is a bit com-
+plex).
