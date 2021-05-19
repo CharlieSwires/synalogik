@@ -37,7 +37,7 @@ public class ReadFile {
         input = input.replaceAll("\"", "");
         //replace ,.()
         input = input.replaceAll("[,.)(]", "");
-        System.out.println("Input="+input);
+        //System.out.println("Input="+input);
         return input;
     }
 
