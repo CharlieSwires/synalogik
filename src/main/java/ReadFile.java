@@ -34,9 +34,8 @@ public class ReadFile {
         //replace EOL with <space>
         input = input.replaceAll(ls, " ");
         //replace "
-        input = input.replaceAll("\"", "");
         //replace ,.()
-        input = input.replaceAll("[,.)(]", "");
+        input = input.replaceAll("[,.)(\\\"]", "");
         //System.out.println("Input="+input);
         return input;
     }
