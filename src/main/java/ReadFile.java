@@ -115,7 +115,7 @@ public class ReadFile {
         if (index.index < content.length()) {
 
             for(int i = index.index; i < content.length();) {
-                if (content.charAt(i) == ' ') {
+                if (content.charAt(i) == ' ' || content.charAt(i) == '\t') {
                     index.index = i+1;
                     return returnString.toString();
                 }
